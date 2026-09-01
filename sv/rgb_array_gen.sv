@@ -19,6 +19,11 @@
 //   2. rgb_array_fast_c   - permutation + repair version (fast, no solver
 //                           blow-up; useful when 3 x unique{} over 256
 //                           elements is too slow in your simulator)
+//
+// Verification status: rgb_array_fast_c + check_rgb_array were compiled and
+// run under Verilator 5.020 (lint-clean, PASS on 5 seeds).  rgb_array_c is
+// NOT covered by that run - Verilator 5.020 cannot parse `unique {}` inside
+// a constraint block - so build it with VCS/Xcelium before relying on it.
 //======================================================================
 
 package rgb_pkg;
@@ -158,11 +163,11 @@ package rgb_pkg;
         pass = 0;
       end
       // per-channel uniqueness across the array
-      if (seen_r.exists(arr[i].r)) begin $error("[%0d] duplicate R=%0d", i, arr[i].r); pass = 0; end
-      if (seen_g.exists(arr[i].g)) begin $error("[%0d] duplicate G=%0d", i, arr[i].g); pass = 0; end
-      if (seen_b.exists(arr[i].b)) begin $error("[%0d] duplicate B=%0d", i, arr[i].b); pass = 0; end
+      if (seen_r.exists(arr[i].r) != 0) begin $error("[%0d] duplicate R=%0d", i, arr[i].r); pass = 0; end
+      if (seen_g.exists(arr[i].g) != 0) begin $error("[%0d] duplicate G=%0d", i, arr[i].g); pass = 0; end
+      if (seen_b.exists(arr[i].b) != 0) begin $error("[%0d] duplicate B=%0d", i, arr[i].b); pass = 0; end
       // whole-triplet uniqueness
-      if (seen_t.exists(arr[i]))   begin $error("[%0d] duplicate triplet", i);        pass = 0; end
+      if (seen_t.exists(arr[i]) != 0)   begin $error("[%0d] duplicate triplet", i);        pass = 0; end
 
       seen_r[arr[i].r] = 1;
       seen_g[arr[i].g] = 1;
