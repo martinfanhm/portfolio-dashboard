@@ -1,0 +1,1 @@
+{ "name": "record-mode", "version": "0.1.0", "description": "/record 切換錄影模式：畫面上的 email、API key、電話號碼換成遮罩，只改畫面不改 Claude 讀到的內容", "types": "./types/index.d.ts" }

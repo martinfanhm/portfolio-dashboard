@@ -58,20 +58,25 @@ export const register: Register = on => {
       </Text>
     )
     const reset = clock(s.fiveHour?.resetsAt)
+    // Stack on whatever the plugins beneath draw, so other bands stay visible.
+    const below = await next(e)
 
     return (
-      <Box flexDirection="row" gap={2}>
-        {cell('context', 'context', s.contextPercent)}
-        {hasQuota
-          ? [
+      <Box flexDirection="column">
+        <Box flexDirection="row" gap={2}>
+          {cell('context', 'context', s.contextPercent)}
+          {hasQuota ? (
+            [
               cell('five-hour', '5h', s.fiveHour?.percent, reset ? ` · ${reset} 重置` : ''),
               cell('seven-day', '本週', s.sevenDay?.percent),
             ]
-          : (
+          ) : (
             <Text key="cost" color="subtle">
               本對話花費 {s.costUsd === undefined ? '—' : `$${s.costUsd.toFixed(2)}`}
             </Text>
           )}
+        </Box>
+        {below}
       </Box>
     )
   })
