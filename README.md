@@ -180,3 +180,10 @@ daily-portfolio/
 ⭐ 如果這個專案對你有幫助，請給它一顆星星！
 
 **讓理財變得更簡單，讓數據說話！** 📈
+## Claude Code mod: usage-meter
+
+輸入框上方的用量細帶（context、五小時額度與重置時間、本週額度；API key 改顯示本對話花費；超過八成變紅）。在任一 Claude Code 終端機裡安裝到所有 session（選 user scope）：
+
+```
+/plugin install usage-meter --marketplace martinfanhm/portfolio-dashboard
+```

@@ -1,0 +1,11 @@
+{
+  "name": "martinfanhm-mods",
+  "owner": { "name": "martinfanhm" },
+  "plugins": [
+    {
+      "name": "usage-meter",
+      "source": "./plugins/usage-meter",
+      "description": "輸入框上方的用量細帶：context、五小時與本週額度（API key 改顯示花費），超過八成變紅"
+    }
+  ]
+}
