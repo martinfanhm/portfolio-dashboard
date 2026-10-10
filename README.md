@@ -180,3 +180,25 @@ daily-portfolio/
 ⭐ 如果這個專案對你有幫助，請給它一顆星星！
 
 **讓理財變得更簡單，讓數據說話！** 📈
+
+## Claude Code mods
+
+這個 repo 也是一個 Claude Code plugin marketplace（`martinfanhm-mods`），收了這幾個 mod，原始碼在 `plugins/`：
+
+| mod | 做什麼 |
+| --- | --- |
+| `usage-meter` | 輸入框上方的用量細帶：context、五小時額度與重置時間、本週額度；API key 改顯示本對話花費；超過八成變紅 |
+| `cache-timer` | 倒數主對話的提示快取還剩多久過期（訂閱一小時、API key 五分鐘，可在 `/config` 改），快過期時提醒，過期變紅 |
+| `collision-alarm` | 寫入或編輯檔案前，查過去三十分鐘有沒有別的對話改過同一個檔案，有的話先問要繼續還是取消 |
+| `record-mode` | `/record` 開關錄影模式：畫面上的 email、API key、電話換成遮罩，Claude 讀到的內容不變（權限詢問框不受影響） |
+| `handoff` | context 用到七成時出現交接按鈕：寫交接摘要、存到 `.claude/handoffs/`、清空對話、把摘要當新對話第一句送出 |
+
+在 Claude Code 終端機裡逐一安裝（範圍選 user scope，之後所有 session 都會載入）：
+
+```
+/plugin install usage-meter --marketplace martinfanhm/portfolio-dashboard
+/plugin install cache-timer --marketplace martinfanhm/portfolio-dashboard
+/plugin install collision-alarm --marketplace martinfanhm/portfolio-dashboard
+/plugin install record-mode --marketplace martinfanhm/portfolio-dashboard
+/plugin install handoff --marketplace martinfanhm/portfolio-dashboard
+```

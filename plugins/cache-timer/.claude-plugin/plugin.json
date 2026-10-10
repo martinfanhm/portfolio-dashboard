@@ -1,0 +1,15 @@
+{
+  "name": "cache-timer",
+  "version": "0.1.0",
+  "description": "輸入框上方倒數主對話的提示快取還剩多久過期，剩五分鐘時提醒，過期變紅",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "ttl": {
+      "type": "string",
+      "title": "快取存活時間",
+      "description": "auto：有五小時／每週額度（訂閱）用一小時，否則（API key）用五分鐘",
+      "options": ["auto", "60", "5"],
+      "default": "auto"
+    }
+  }
+}

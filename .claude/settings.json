@@ -1,0 +1,17 @@
+{
+  "extraKnownMarketplaces": {
+    "martinfanhm-mods": {
+      "source": {
+        "source": "github",
+        "repo": "martinfanhm/portfolio-dashboard"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "usage-meter@martinfanhm-mods": true,
+    "cache-timer@martinfanhm-mods": true,
+    "collision-alarm@martinfanhm-mods": true,
+    "record-mode@martinfanhm-mods": true,
+    "handoff@martinfanhm-mods": true
+  }
+}

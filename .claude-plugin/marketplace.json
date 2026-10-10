@@ -1,0 +1,33 @@
+{
+  "name": "martinfanhm-mods",
+  "owner": {
+    "name": "martinfanhm"
+  },
+  "plugins": [
+    {
+      "name": "usage-meter",
+      "source": "./plugins/usage-meter",
+      "description": "輸入框上方的用量細帶：context、五小時與本週額度（API key 改顯示花費），超過八成變紅"
+    },
+    {
+      "name": "cache-timer",
+      "source": "./plugins/cache-timer",
+      "description": "輸入框上方倒數主對話的提示快取還剩多久過期，剩五分鐘時提醒，過期變紅"
+    },
+    {
+      "name": "collision-alarm",
+      "source": "./plugins/collision-alarm",
+      "description": "寫入或編輯檔案前，查過去三十分鐘有沒有別的對話改過同一個檔案，有的話先問要繼續還是取消"
+    },
+    {
+      "name": "record-mode",
+      "source": "./plugins/record-mode",
+      "description": "/record 切換錄影模式：畫面上的 email、API key、電話號碼換成遮罩，只改畫面不改 Claude 讀到的內容"
+    },
+    {
+      "name": "handoff",
+      "source": "./plugins/handoff",
+      "description": "context 用到七成時在輸入框上方出現交接按鈕：寫交接摘要、存檔、清空對話、把摘要當新對話第一句送出"
+    }
+  ]
+}

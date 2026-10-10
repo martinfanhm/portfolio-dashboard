@@ -1,0 +1,1 @@
+{ "name": "collision-alarm", "version": "0.1.0", "description": "寫入或編輯檔案前，查過去三十分鐘有沒有別的對話改過同一個檔案，有的話先問要繼續還是取消" }

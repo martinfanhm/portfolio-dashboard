@@ -1,0 +1,1 @@
+{ "name": "handoff", "version": "0.1.0", "description": "context 用到七成時在輸入框上方出現交接按鈕：寫交接摘要、存檔、清空對話、把摘要當新對話第一句送出", "types": "./types/index.d.ts" }
